@@ -3,3 +3,11 @@ header {
     background-color: grey;
     color: white;
 }
+
+
+
+
+footer {
+    text-align: right;
+    padding-right: 200px;
+}
