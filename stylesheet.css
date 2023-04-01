@@ -98,3 +98,11 @@ tbody tr:nth-child(odd){
   tbody tr:nth-child(even){
     background: #dcdcdc;
   }
+
+#endOfTableRow {
+    background-color: grey;
+    border-collapse: ;
+}
+#endOfTableRow th {
+    border: none;
+}
