@@ -1,13 +1,15 @@
 $(document).ready(onReady);
 
+//Global variables
+let totalAnualSalary = 0;
+let totalMonthly = 0;
+
 function onReady() {
     console.log("jquery working");
     //Create an event listener for submit button
     $('#submitButton').on('click', submitHandler);
-
+    $('#totalMonthlyValue').append(totalMonthly);
 }
-
-
 
 //Callback Functions:
 function submitHandler(event) {
@@ -39,6 +41,13 @@ function submitHandler(event) {
             <th>${anualSalaryInput}</th>  
             <th><button id="deleteButton"> Delete </th>
         </tr>`);
+
+        //Increase the value of totalMonthlyCost
+        totalAnualSalary += Number(anualSalaryInput);
+        totalMonthly = Math.round(totalAnualSalary/12);
+        $('#totalMonthlyValue').empty();
+        $('#totalMonthlyValue').append(totalMonthly);
+
     } else {
         console.log('Required fields missing!');
     }

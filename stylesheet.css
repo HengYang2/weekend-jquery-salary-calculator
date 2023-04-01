@@ -112,3 +112,8 @@ tbody tr:nth-child(even){
 #endOfTableRow th {
     border: none;
 }
+
+#totalMonthly {
+    margin-left: 70%;
+    text-align: center;
+}
