@@ -48,6 +48,11 @@ function submitHandler(event) {
         $('#totalMonthlyValue').empty();
         $('#totalMonthlyValue').append(totalMonthly);
 
+        //Does
+        if (totalMonthly > 20000) {
+            document.querySelector('#totalMonthly').style.backgroundColor="red";
+        }
+
     } else {
         console.log('Required fields missing!');
     }

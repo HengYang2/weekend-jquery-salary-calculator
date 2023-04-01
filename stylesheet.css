@@ -107,7 +107,6 @@ tbody tr:nth-child(even){
 
 #endOfTableRow {
     background-color: grey;
-    border-collapse: ;
 }
 #endOfTableRow th {
     border: none;
