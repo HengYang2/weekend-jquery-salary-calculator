@@ -21,11 +21,22 @@ function submitHandler(event) {
     let firstNameInput = $('#firstNameInput').val();
     let lastNameInput = $('#lastNameInput').val();
     let idInput = $('#idInput').val();
+    let idIsNumber = true;
     let titleInput = $('#titleInput').val();
     let anualSalaryInput = $('#anualSalaryInput').val();
+    let isAnualSalaryInputNumber = true;
+
+    if (isNaN(idInput)) {
+        idIsNumber = false;
+    }
+    if (isNaN(anualSalaryInput)) {
+        isAnualSalaryInputNumber = false;
+    }
 
     //If all input boxes aren't given a value, a new row wont be added:
-    if (firstNameInput != '' && lastNameInput != '' && idInput != '' && titleInput != '' && anualSalaryInput != '') {
+    if (firstNameInput != ''  && lastNameInput != '' && idInput != '' && 
+        titleInput != '' && anualSalaryInput != '' && idIsNumber && 
+        isAnualSalaryInputNumber) {
         //Erase input values:
         $('#firstNameInput').val('');
         $('#lastNameInput').val('');
@@ -59,7 +70,7 @@ function submitHandler(event) {
         }
 
     } else {
-        console.log('Required fields missing!');
+        console.log('Not a number');
     }
 }
 
