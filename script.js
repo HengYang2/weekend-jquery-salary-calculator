@@ -35,13 +35,14 @@ function submitHandler(event) {
 
         //Create a tr element filled out with the input values and place it into the table:
         $('tbody').append(`<tr>
-            <th>${firstNameInput}</th>
-            <th>${lastNameInput}</th>
-            <th>${idInput}</th>
-            <th>${titleInput}</th>
-            <th id="anualSalaryInput">${anualSalaryInput}</th>  
-            <th><button id="deleteButton"> Delete </th>
+            <td>${firstNameInput}</td>
+            <td>${lastNameInput}</td>
+            <td>${idInput}</td>
+            <td>${titleInput}</td>
+            <td id="anualSalaryInput">${anualSalaryInput}</td>  
+            <td><button id="deleteButton"> Delete </td>
         </tr>`);
+ 
 
         //Increase the value of totalMonthlyCost.
         totalAnualSalary += Number(anualSalaryInput);
@@ -63,7 +64,7 @@ function submitHandler(event) {
 //Delete employee function:
 function deleteEmployee() {
 
-    //Removes corresponding tr element from the table.
+    //Removes corresponding td element from the table.
     $(this).parent().parent().remove();
 
     //Get totalAnualSalary value
