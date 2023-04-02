@@ -39,7 +39,7 @@ function submitHandler(event) {
             <th>${lastNameInput}</th>
             <th>${idInput}</th>
             <th>${titleInput}</th>
-            <th>${anualSalaryInput}</th>  
+            <th id="anualSalaryInput">${anualSalaryInput}</th>  
             <th><button id="deleteButton"> Delete </th>
         </tr>`);
 
@@ -61,6 +61,22 @@ function submitHandler(event) {
 
 //Delete employee function:
 function deleteEmployee() {
+
+    //Removes corresponding tr element from the table.
     $(this).parent().parent().remove();
+
+    //Get totalAnualSalary value
+    //Subtract deleted employee's total anual salary
+    let deletedEmployeeTotalAnualSalary = Number($(this).parent().parent().find('#anualSalaryInput').text());
+    totalAnualSalary -= deletedEmployeeTotalAnualSalary;
+        //Recalculate the total monthly
+    totalMonthly = Math.round(totalAnualSalary/12);
+    //Display the change on the DOM
+        //Locate and empty out the totalMonthlyValue on the DOM
+        //Append new totalMonthly value into it.
+    $('#totalMonthlyValue').empty();
+    $('#totalMonthlyValue').append(totalMonthly);
+
 }
 
+//Round to neareast 2 decimals
