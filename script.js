@@ -49,7 +49,8 @@ function submitHandler(event) {
         $('#totalMonthlyValue').empty();
         $('#totalMonthlyValue').append(totalMonthly);
 
-        //If totalMonthly exceeds 20,000 then turn its element's background color to red.
+        //If totalMonthly exceeds 20,000 then turn its element's background color 
+        //to red.
         if (totalMonthly > 20000) {
             document.querySelector('#totalMonthly').style.backgroundColor="red";
         }
@@ -76,6 +77,12 @@ function deleteEmployee() {
         //Append new totalMonthly value into it.
     $('#totalMonthlyValue').empty();
     $('#totalMonthlyValue').append(totalMonthly);
+
+    //If totalMonthly doesn't exceed 20,000 then reset its element's background color
+    //to white.
+    if (totalMonthly < 20000) {
+        document.querySelector('#totalMonthly').style.backgroundColor="white";
+    }
 
 }
 
