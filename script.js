@@ -8,6 +8,7 @@ function onReady() {
     console.log("jquery working");
     //Create an event listener for submit button
     $('#submitButton').on('click', submitHandler);
+    $('tbody').on('click', '#deleteButton', deleteEmployee);
     $('#totalMonthlyValue').append(totalMonthly);
 }
 
@@ -42,13 +43,13 @@ function submitHandler(event) {
             <th><button id="deleteButton"> Delete </th>
         </tr>`);
 
-        //Increase the value of totalMonthlyCost
+        //Increase the value of totalMonthlyCost.
         totalAnualSalary += Number(anualSalaryInput);
         totalMonthly = Math.round(totalAnualSalary/12);
         $('#totalMonthlyValue').empty();
         $('#totalMonthlyValue').append(totalMonthly);
 
-        //Does
+        //If totalMonthly exceeds 20,000 then turn its element's background color to red.
         if (totalMonthly > 20000) {
             document.querySelector('#totalMonthly').style.backgroundColor="red";
         }
@@ -56,5 +57,10 @@ function submitHandler(event) {
     } else {
         console.log('Required fields missing!');
     }
+}
+
+//Delete employee function:
+function deleteEmployee() {
+    $(this).parent().parent().remove();
 }
 

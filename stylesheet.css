@@ -19,8 +19,8 @@ body {
 header {
     height: 8em; /*Eight times the size of font*/
     text-align: center;
-    background-color: grey;
-    color: white;
+    background-color: lightblue;
+    color: black;
 }
 main {
     flex:auto;
@@ -30,7 +30,7 @@ main {
 footer {
     height: 8em; /*Eight times the size of font*/
     text-align: center;
-    background-color: grey;
+    background-color: lightblue;
     color: white;
     margin-top:1.5em;
 }
