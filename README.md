@@ -1,5 +1,12 @@
 # Salary Calculator
 
+Topics Covered:
+- Html
+- Css
+- Javascript
+- Event delegation
+- DOM traversal
+- Jquery practice 
 
 
 ## Description
